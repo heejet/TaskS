@@ -48,4 +48,10 @@ public class Main {
             }
         }
     }
+    private static int countDeadlinesUsingStreams(ArrayList<Task> tasks) {
+        int count = (int) tasks.stream()
+                .filter(i -> i instanceof Deadline)
+                .count();
+        return count;
+    }
 }
